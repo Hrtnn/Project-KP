@@ -209,10 +209,10 @@
                             <ul>
                                 <li><a href="team-list.html">Team List</a></li>
                                 <li><a href="project-list.html">Project Upload</a></li>
-                                <li><a href="">Validation Progress</a></li>                                                                   
-                                <li><a href="">Implentation</a></li>
-                                <li><a href="job.html">Progress ATP</a></li>
-                                <li><a href="-">Project Order</a></li>
+                                <li><a href="Validation.html">Validation Progress</a></li>                                                                   
+                                <li><a href="implementation.html">Implentation</a></li>
+                                <li><a href="atp.html">Progress ATP</a></li>
+                                <li><a href="po.html">Purchase Order</a></li>
                             </ul>
                         </li>
         
@@ -272,7 +272,6 @@
                             <h3 class="page-title">Admin Dashboard</h3>
                             <ul class="breadcrumb">
                                 <li class="breadcrumb-item"><a href="admin-dashboard.html">Dashboard</a></li>
-                                <li class="breadcrumb-item active">User Progress Project</li>
                             </ul>
                         </div>
                     </div>
@@ -281,17 +280,13 @@
 
                 <div class="card">
                     <div class="card-body">
-
                         <ul class="nav nav-tabs nav-tabs-solid nav-justified">
-                            <li class="nav-item"><a class="nav-link" href="">Validation Progress</a></li>
+                            <li class="nav-item"><a class="nav-link" href="Validation.html">Validation Progress</a></li>
                             <li class="nav-item"><a class="nav-link" href="implementation.html">Add Progress
                                     Implementation</a></li>
-                            <li class="nav-item"><a class="nav-link" href="mos.html">Add Material On Site </a></li>
                             <li class="nav-item"><a class="nav-link" href="rfs.html">Add Progress RFS </a></li>
                             <li class="nav-item"><a class="nav-link" href="atp.html">Add Progress ATP </a></li>
-
                     </div>
-
                     </ul>
                 </div>
             </div>
@@ -363,7 +358,7 @@
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">
-                                <table class="table table-nowrap custom-table mb-0" id="daftar_progress">
+                                <table class="table table-nowrap custom-table mb-0">
                                     <thead>
                                         <tr>
                                             <th>NO</th>
@@ -381,7 +376,84 @@
                                     </thead>
                                     <tbody>
                                         <tr>
+                                            <td>1</td>
+                                            <td>CAG0001</td>
+                                            <td>Web Developer</td>
+                                            <td>User</td>
+                                        
+
+                                            <td class="text-center">
+                                                <div class="action-label">
+                                                    <a class="btn btn-white btn-sm btn-rounded" href="#"
+                                                        data-bs-toggle="dropdown" aria-expanded="false">
+                                                        <i class="fa-regular fa-circle-dot text-danger"></i>
+                                                        Cancelled
+                                                    </a>
+                                                </div>
+                                            </td>
+                                            <td class="text-center">
+                                                <div class="action-label">
+                                                    <a class="btn btn-white btn-sm btn-rounded" href="#"
+                                                        data-bs-toggle="dropdown" aria-expanded="false">
+                                                        <i class="fa-regular fa-circle-dot text-danger"></i>
+                                                        Cancelled
+                                                    </a>
+                                                </div>
+                                            </td>
+                                            <td class="text-center">
+                                                <div class="action-label">
+                                                    <a class="btn btn-white btn-sm btn-rounded" href="#"
+                                                        data-bs-toggle="dropdown" aria-expanded="false">
+                                                        <i class="fa-regular fa-circle-dot text-danger"></i>
+                                                        Cancelled
+                                                    </a>
+                                                </div>
+                                            </td>
+                                            <td class="text-center">
+                                                <div class="action-label">
+                                                    <a class="btn btn-white btn-sm btn-rounded" href="#"
+                                                        data-bs-toggle="dropdown" aria-expanded="false">
+                                                        <i class="fa-regular fa-circle-dot text-danger"></i>
+                                                        Cancelled
+                                                    </a>
+                                                </div>
+                                            </td>
+                                            <td class="text-center">
+                                                <div class="action-label">
+                                                    <a class="btn btn-white btn-sm btn-rounded" href="#"
+                                                        data-bs-toggle="dropdown" aria-expanded="false">
+                                                        <i class="fa-regular fa-circle-dot text-danger"></i>
+                                                        Cancelled
+                                                    </a>
+                                                </div>
+                                            </td>
+                                            <td class="text-center">
+                                                <div class="action-label">
+                                                    <a class="btn btn-white btn-sm btn-rounded" href="#"
+                                                        data-bs-toggle="dropdown" aria-expanded="false">
+                                                        <i class="fa-regular fa-circle-dot text-danger"></i> Full
+                                                        Time
+                                                    </a>
+                                                </div>
+                                            </td>
+
+
+                                            <td class="text-center">
+                                                <div class="dropdown dropdown-action">
+                                                    <a href="#" class="action-icon dropdown-toggle"
+                                                        data-bs-toggle="dropdown" aria-expanded="false"><i
+                                                            class="material-icons">more_vert</i></a>
+                                                    <div class="dropdown-menu dropdown-menu-right">
+                                                        <a class="dropdown-item" href="#" data-bs-toggle="modal"
+                                                            data-bs-target="#delete_employee"><i
+                                                                class="fa-regular fa-trash-can m-r-5"></i>
+                                                            Delete</a>
+                                                    </div>
+                                                </div>
+                                            </td>
                                         </tr>
+
+
                                     </tbody>
                                 </table>
                             </div>
@@ -389,119 +461,212 @@
                     </div>
                 </div>
             </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="card card-table flex-fill">
+                        <div class="card-header">
+                            <h3 class="card-title mb-0">Purchase Order</h3>
+                        </div>
+                    <div class="table-responsive">
+                        <table class="table table-striped custom-table mb-0 datatable">
+                            <thead>
+                                <tr>
+                                    <th>NO</th>
+                                    <th>System Key</th>
+                                    <th>SOW</th>
+                                    <th>PO Request</th>
+                                    <th>PO Number</th>
+                                    <th>PO Date</th>
+                                    <th>Project ID</th>
+                                    <th>Item Number</th>
+                                    <th>Product Name</th>
+                                    <th>Object ID</th>
+                                    <th>Object Type</th>
+                                    <th>PO Line Item</th>
+                                    <th>PO File</th>
+                                    <th>PO Price</th>
+                                    <th>Tax</th>
+                                    <th>PO Amount</th>
+                                    <th>Status</th>
+                                    <th>Remarks</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td><div class="col-auto float-end ms-auto">
+                                        <a href="#" class="text" data-bs-toggle="modal" data-bs-target="#project-view"><i
+                                              ></i>CAG-0001</a>
+                                    </div></td> 
+                                    <td>Reconfig</td>
+                                    <td>20 Feb 2023</td>
+                                    <td>PO-APM-21-005545</td>
+                                    <td>20 Feb 2023</td>
+                                    <td>P-APM-21-000022-TRM WEST</td>
+                                    <td>PRD-APM-18-000164</td>
+                                    <td>Upgrade Reconfigure 2+0 For Sumatera</td>
+                                    <td>FT/2885/TRM -129</td>
+                                    <td>WBS</td>
+                                    <td>1</td>
+                                    <td> <a href="<i class="fas fa-google-drive    ">OPEN</i></td>
+                                    <td>6.500.000</td>
+                                    <td>10 %</td>
+                                    <td>6.850.000</td>
+                                    <td>
+                                        <div class="dropdown action-label">
+                                            <a class="btn btn-white btn-sm btn-rounded dropdown-toggle" href="#"
+                                                data-bs-toggle="dropdown" aria-expanded="false">
+                                                <i class="fa-regular fa-circle-dot text-danger"></i> New
+                                            </a>
+                                            <div class="dropdown-menu dropdown-menu-right">
+                                               
+                                                <a class="dropdown-item" href="#"><i
+                                                        class="fa-regular fa-circle-dot text-success"></i>Done</a>
+                                                <a class="dropdown-item" href="#"><i
+                                                        class="fa-regular fa-circle-dot text-danger"></i>
+                                                    Cancelled</a>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>-</td>
+                                    <td class="text-end">
+                                        <div class="dropdown dropdown-action">
+                                            <a href="#" class="action-icon dropdown-toggle"
+                                                data-bs-toggle="dropdown" aria-expanded="false"><i
+                                                    class="material-icons">more_vert</i></a>
+                                            <div class="dropdown-menu dropdown-menu-right">
+                                                <a class="dropdown-item" href="#" data-bs-toggle="modal"
+                                                    data-bs-target="#edit_ticket"><i
+                                                        class="fa-solid fa-pencil m-r-5"></i> Edit</a>
+                                                <a class="dropdown-item" href="#" data-bs-toggle="modal"
+                                                    data-bs-target="#delete_ticket"><i
+                                                        class="fa-regular fa-trash-can m-r-5"></i> Delete</a>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+ 
         </div>
+
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card card-table flex-fill">
+                    <div class="card-header">
+                        <h3 class="card-title mb-0">Progress BAST & GSR</h3>
+                    </div>
+                <div class="table-responsive">
+                    <table class="table table-striped custom-table mb-0 datatable">
+                        <thead>
+                            <tr>
+                                <th>NO</th>
+                                <th>System Key</th>
+                                <th>BAST Number</th>
+                                <th>EWO/NBWO</th>
+                                <th>PO Number</th>
+                                <th>Project Name</th>
+                                <th>SOW</th>
+                                <th>FOP Approve Date</th>
+                                <th>ROH Approve Date</th>
+                                <th>Term</th>
+                                <th>BAST File</th>
+                                <th>BAST Approved</th>
+                                <th>GSR File Name</th>
+                                <th>GSR File</th>
+                                <th>Submit Date</th>
+                                <th>Client Feedback</th>
+                                <th>Resubmit Date</th>
+                                <th>Approved Date</th>
+                                <th>Status</th>
+                                <th>Remarks</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>
+                                    <div class="col-auto float-end ms-auto">
+                                        <a href="#" class="text" data-bs-toggle="modal"
+                                            data-bs-target="#project-view"><i></i>CAG-0001</a>
+                                    </div>
+                                </td>
+                                <td>0001/Installation/CAG-APM/XII/2021</td>
+                                <td>FT-2885-TRM-030-WST-219</td>
+                                <td>PO-APM-21-004480</td>
+                                <td>Upgrade H2</td>
+                                <td>Reconfig 2+0</td>
+                                <td>3 May 2021</td>
+                                <td>No Need</td>
+                                <td>100 %</td>
+                                <td> <a href="<i class=" fas fa-google-drive ">OPEN</i></td>
+                                <td> <a href=" <i class="fas fa-google-drive    ">OPEN</i></td>
+                                <td>GSR-APM-22-000830 BAST 0006</td>
+                                <td><a href="<i class=" fas fa-google-drive ">OPEN</i></td>
+                                <td>3 May 2021</td>
+                                <td>3 May 2021</td>
+                                <td>3 May 2021</td>
+                                <td>3 May 2021</td>                
+                                <td class=" text-center">
+                                        <div class="action-label">
+                                            <a class="btn btn-white btn-sm btn-rounded" href="#"
+                                                data-bs-toggle="dropdown" aria-expanded="false">
+                                                <i class="fa-regular fa-circle-dot text-success"></i>
+                                                Done
+                                            </a>
+                                        </div>
+                                </td>
+                                <td>-</td>
+                                <td class="text-end">
+                                    <div class="dropdown dropdown-action">
+                                        <a href="#" class="action-icon dropdown-toggle"
+                                            data-bs-toggle="dropdown" aria-expanded="false"><i
+                                                class="material-icons">more_vert</i></a>
+                                        <div class="dropdown-menu dropdown-menu-right">
+                                            <a href="#" class="dropdown-item" data-bs-toggle="modal"
+                                                data-bs-target="#edit_job"><i
+                                                    class="fa-solid fa-pencil m-r-5"></i> Edit</a>
+                                            <a href="#" class="dropdown-item" data-bs-toggle="modal"
+                                                data-bs-target="#delete_job"><i
+                                                    class="fa-regular fa-trash-can m-r-5"></i> Delete</a>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        </div>
+
     </div>
 
    
 
     <script data-cfasync="false" src="../../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
     <script src="assets/js/jquery-3.7.0.min.js"></script>
+
     <script src="assets/js/bootstrap.bundle.min.js"></script>
+
     <script src="assets/js/jquery.slimscroll.min.js"></script>
+
     <script src="assets/plugins/morris/morris.min.js"></script>
     <script src="assets/plugins/raphael/raphael.min.js"></script>
     <script src="assets/js/chart.js"></script>
     <script src="assets/js/greedynav.js"></script>
+
     <script src="assets/js/layout.js"></script>
     <script src="assets/js/theme-settings.js"></script>
 
     <script src="assets/js/app.js"></script>
-
-    <script>
-        window.onload = function() {
-            getDaftarProgressATP();
-        };
-
-        var statusATP = ['CQC_approve_date', 'PQC_approve_date', 'AQC_approve_date', 'FOP_approve_date', 'ROH_approve_date'];
-        var tableCols = [
-            'system_key', 
-            'progress_title', 
-            'team_name', 
-            'CQC_approve_date', 
-            'PQC_approve_date', 
-            'AQC_approve_date', 
-            'FOP_approve_date', 
-            'ROH_approve_date', 
-            'status'
-        ];
-
-        function fillTable(table_id, data)
-        {
-            var table = document.getElementById(table_id);
-            var body = table.tBodies[0];
-            var idx = 1;
-
-            $.each(data, function(index, element) {
-                var row = body.insertRow(-1);
-                var num = row.insertCell(-1);
-                num.innerHTML = idx++;
-                
-                var system_key = element["system_key"];
-
-                $.each(element, function(key, value) {
-                    if(tableCols.includes(key))
-                    {
-                        var cell = row.insertCell(-1);
-
-                        if(statusATP.includes(key))
-                        {
-                            cell.innerHTML = `<div class="action-label">
-                                                <p class="btn btn-white btn-sm btn-rounded" aria-expanded="false" onclick="updateStatusValidasi('`+ key +`','`+ system_key +`')">
-                                                    <i class="fa-regular fa-circle-dot text-`+(value != null ? 'success' : 'danger')+`"></i>
-                                                    `+ (value != null ? "Approved" : "Cancelled") +`
-                                                </p>
-                                            </div>`;
-                        }
-                        else
-                        {
-                            cell.innerHTML = value;
-                        }
-                    }
-                });
-
-                var endCell = row.insertCell(-1);
-                endCell.innerHTML = `<div class="dropdown dropdown-action">
-                                        <a href="#" class="action-icon dropdown-toggle"
-                                            data-bs-toggle="dropdown" aria-expanded="false"><i
-                                                class="material-icons">more_vert</i></a>
-                                        <div class="dropdown-menu dropdown-menu-right">
-                                            <a class="dropdown-item" href="#" data-bs-toggle="modal"
-                                                data-bs-target="#edit_project"><i
-                                                    class="fa-solid fa-pencil m-r-5"></i> Edit</a>
-                                            <a class="dropdown-item" href="#" data-bs-toggle="modal"
-                                                data-bs-target="#delete_project"><i
-                                                    class="fa-regular fa-trash-can m-r-5"></i> Delete</a>
-                                        </div>
-                                    </div>`;
-            });
-        }
-
-        function updateStatusValidasi(status, system_key)
-        {
-            postData = {'type' : status, 'system_key' : system_key,'function' : 'UpdateStatusProgressATP'};
-            //alert("request dikirim!");
-            $.ajax({
-                url: '/ProjectKP/project/controller/ProgressATP.php',
-                type: 'POST',
-                data: postData,
-                success: function(response) {
-                    location.reload(true);
-                }
-            });
-        }
-
-        function getDaftarProgressATP() {
-            $.get({
-                url: '/ProjectKP/project/controller/ProgressATP.php?function=getProgressATPList',
-                success: function(response) {
-                    var responseObj = JSON.parse(response);
-                    console.log(responseObj.data);
-
-                    fillTable('daftar_progress', responseObj.data);    
-                }
-            })
-        }
-    </script>
 </body>
 
 
