@@ -22,7 +22,7 @@ class ProgressATPModel extends BaseModel
     // Mengambil daftar data pada table proyek
     public function getProyekList($condition = "", $columns = "*")
     {
-        $query = "SELECT $columns FROM project $condition";
+        $query = "SELECT $columns FROM progress_atp $condition";
         $stmt = $this->db->prepare($query);
 
         if($stmt) {
@@ -37,8 +37,17 @@ class ProgressATPModel extends BaseModel
     // Mengambil data pada tabel progress berdasarkan system_key
     public function getProgressATPByKey($system_key)
     {
-        $result = $this->db->query("SELECT * FROM progress_atp WHERE system_key = '$system_key'");
-        return $this->to_array($result)[0];
+        $query = "SELECT * FROM progress_atp WHERE system_key = '$system_key'";
+        $stmt = $this->db->prepare($query);
+
+        if($stmt) {
+            $stmt->execute();
+            $result = $stmt->get_result();
+
+            if($result) return $this->to_array($result)[0];
+        }
+
+        return false;
     }
 
     public function checkStatus($data)
@@ -80,66 +89,98 @@ class ProgressATPModel extends BaseModel
     // Membuat progress baru ke dalam tabel ProgressATP
     public function CreateProgressATP($data)
     {
-        $data["progress_atp_id"] = uniqid();
-        $columns = "";
-        $values = "";
+        $columns = [];
+        $placeholders = [];
+        $types = "";
+        $values = [];
 
-        foreach($this->attributes as $col) 
+        foreach ($this->attributes as $col)
         {
-            if(array_key_exists($col, $data)) 
+            if (array_key_exists($col, $data))
             {
-                $val = $data[$col];
-                $columns .= "'$col', ";
-                $values .= (gettype($val) == "integer") ? "NULLIF($val), " : "NULLIF('$val'), ";
+                $columns[] = $col;
+                $values[] = $data[$col];
+
+                $types .= (is_int($data[$col]) ? "i" : "s");
+                $placeholders[] = "?";
             }
         }
 
-        $columns = rtrim($columns, ", ");
-        $values = rtrim($values, ", ");
-        $query = "INSERT INTO progress_atp (".$columns.") VALUES (".$values.")";
+        $columnStr = implode(", ", $columns);
+        $placeholderStr = implode(", ", $placeholders);
 
-        return $this->db->query($query);
+        $query = "INSERT INTO progress_atp ($columnStr) VALUES ($placeholderStr)";
+        $stmt = $this->db->prepare($query);
+
+        if($stmt) 
+        {
+            $stmt -> bind_param($types, ...$values);
+            if($stmt->execute()) return true;
+        }
+
+        return false;
     }
 
     // Mengedit atau update data dalam table ProgressATP
     public function EditProgressATP($data)
     {
         if(!isset($data["system_key"])) return false;
-
+    
         $system_key = $data["system_key"];
-        $updates = "";
-
-        foreach($this->attributes as $col)
-        {
-            if(array_key_exists($col, $data)) 
-            {
+        $updates = [];
+        $types = "";
+        $values = [];
+    
+        foreach($this->attributes as $col) {
+            if($col === "system_key") continue;
+    
+            if(array_key_exists($col, $data)) {
                 $val = $data[$col];
-                $updates .= "$col = ";
-                if($val == '' || $val == null)
-                    $updates .= "NULL, ";
-                else
-                    $updates .= (gettype($val) == "integer") ? "$val, " : "'$val', ";
+    
+                // Determine the data type and set the binding types accordingly
+                if (is_int($val)) {
+                    $types .= "i"; // Integer type
+                } else {
+                    $types .= "s"; // Default to string type
+                }
+    
+                $updates[] = "$col = ?";
+                $values[] = $val;
             }
         }
+        
+        $types .= "s"; // Add string type for the WHERE condition (system_key)
+        $values[] = $system_key;
 
-        $updates = rtrim($updates, ", ");
-        $query = "UPDATE progress_atp SET ".$updates." WHERE system_key = '$system_key'";
+        $updatesStr = implode(", ", $updates);
+        $query = "UPDATE progress_atp SET $updatesStr WHERE system_key = ?";
+        $stmt = $this->db->prepare($query);
 
-        return $this->db->query($query);
+        if($stmt) 
+        {
+            $stmt->bind_param($types, ...$values);
+            if ($stmt->execute()) return true;
+        }
+
+        return false;
     }
 
     // Menghapus data dari tabel ProgressATP
-    public function DeleteProgressATP($data)
+    public function DeleteProgressATP($id)
     {
-        if(!isset($data["system_key"])) return false;
+        $values = array($id);
+        $types = "s";
 
-        $id = $data["system_key"];
-        $query = "DELETE FROM progress_atp WHERE system_key = $id";
+        $query = "DELETE FROM progress_atp WHERE system_key = ?";
+        $stmt = $this->db->prepare($query);
 
-        // Untuk soft delete
-        // $this->EditProgressATP(array("system_key" => $data["system_key"], "deleted" => 1));
+        if($stmt) 
+        {
+            $stmt->bind_param($types, ...$values);
+            if ($stmt->execute()) return true;
+        }
 
-        return $this->db->query($query);
+        return false;
     }
 }
 ?>

@@ -143,6 +143,8 @@ class ProyekModel extends BaseModel
             $stmt->bind_param($types, ...$values);
             if ($stmt->execute()) return true;
         }
+
+        return false;
     }
 
     // Menghapus data dari tabel proyek
