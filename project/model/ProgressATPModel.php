@@ -19,8 +19,8 @@ class ProgressATPModel extends BaseModel
         'status'
     );
 
-    // Mengambil daftar data pada table proyek
-    public function getProyekList($condition = "", $columns = "*")
+    // Mengambil daftar data pada table progressATP
+    public function getPgressATPList($condition = "", $columns = "*")
     {
         $query = "SELECT $columns FROM progress_atp $condition";
         $stmt = $this->db->prepare($query);
@@ -34,6 +34,7 @@ class ProgressATPModel extends BaseModel
 
         return false;
     }
+    
     // Mengambil data pada tabel progress berdasarkan system_key
     public function getProgressATPByKey($system_key)
     {
